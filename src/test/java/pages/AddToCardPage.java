@@ -9,18 +9,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class AddToCardPage {
     WebDriver driver;
 
     public AddToCardPage(WebDriver webDrivers) {
         driver = webDrivers;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     // Locators
 
-    @FindBy(xpath = "//*[@id=\"add-to-cart-sauce-labs-backpack\"]")
+    @FindBy(className = "btn_inventory")
     private WebElement addProductBtn;
+
+    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
+    private WebElement addSecondProductBtn;
 
     @FindBy(className = "shopping_cart_link")
     private WebElement addToCartIcon;
@@ -31,26 +36,38 @@ public class AddToCardPage {
     @FindBy(className = "shopping_cart_badge")
     private WebElement cartItemCount;
 
-    //Methods
+    // Methods
 
-
-    public void clickCartIcon(){
+    public void clickCartIcon() {
         addToCartIcon.click();
     }
 
-    public void ClickAddProductBtn(){
+    public void ClickAddProductBtn() {
         addProductBtn.click();
+    }
+
+    public void ClickAddSecondProductBtn() {
+        addSecondProductBtn.click();
     }
 
     public WebElement getCartItemCount() {
         return cartItemCount;
     }
 
-    public void ItemDisplayed(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(ItemDisplayedinChart));
+    public void ItemDisplayed() {
+
+
+        // Verifikasi item count
+        String actualItemCount = getCartItemCount().getText();
+
+        String[] expectedItemCounts = {"1"};
+        boolean isExpected = false;
+        for (String expected : expectedItemCounts) {
+            if (expected.equals(actualItemCount)) {
+                isExpected = true;
+                break;
+            }
+        }
+        assertTrue(isExpected, "Item count is not as expected. Actual: " + actualItemCount);
     }
-
-
 }
-

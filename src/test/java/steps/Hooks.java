@@ -2,9 +2,16 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Hooks {
     private static WebDriver driver;
@@ -18,9 +25,27 @@ public class Hooks {
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
     }
+
     @After
-    public void tearDown() {
+    public void tearDown(Scenario scenario) {
         if (driver != null) {
+            File directory = new File("evidence");
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
+
+            try {
+                TakesScreenshot screenshot = (TakesScreenshot) driver;
+                File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
+
+                String scenarioName = scenario.getName().replaceAll("[^a-zA-Z0-9_]", "_");
+
+                File destFile = new File(directory, scenarioName +".png");
+                FileUtils.copyFile(srcFile, destFile);
+                System.out.println("Screenshot taken and saved to " + destFile.getAbsolutePath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             driver.quit();
         }
     }

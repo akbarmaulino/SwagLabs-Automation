@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5c70db25-605b-49c1-b231-ef56c2f1cbe2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/feature/AddProductToChart.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/feature/AddProductToChart.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddToCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddToCardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runner/testrunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/testrunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/AddToCartStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/AddToCartStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/AddToCardPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/runner/testrunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/AddToCartStep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/Hooks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/steps/LoginSteps.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2juLc5WKjgZZTHEfBHmW6Aotcd5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Feature: DetailProduct.executor": "Run",
+    "Cucumber Java.Feature: FilterHome.executor": "Run",
+    "Cucumber Java.Feature: Login.executor": "Run",
+    "Cucumber Java.Feature: addtochart.executor": "Run",
+    "Cucumber Java.Scenario:  (1).executor": "Run",
+    "Cucumber Java.Scenario: .executor": "Run",
+    "Cucumber Java.Scenario: : User Success To Login.executor": "Run",
+    "Cucumber Java.Scenario: Add Product to Cart (1).executor": "Run",
+    "Cucumber Java.Scenario: Add Product to Cart.executor": "Run",
+    "Cucumber Java.Scenario: Check User Want To Login With Valid Credential.executor": "Run",
+    "Cucumber Java.Scenario: Filter By Name(A to Z).executor": "Run",
+    "Cucumber Java.Scenario: Filter By Name(Z to A) (1).executor": "Run",
+    "Cucumber Java.Scenario: Filter By Name(Z to A).executor": "Run",
+    "Cucumber Java.Scenario: Filter By Price(Low to High).executor": "Run",
+    "Cucumber Java.Scenario: Remove Product From Cart.executor": "Run",
+    "Cucumber Java.Scenario: User Add Product to Chart.executor": "Run",
+    "Cucumber Java.Scenario: User Login With Lock Account.executor": "Run",
+    "Cucumber Java.Scenario: User Login With Valid Credential.executor": "Run",
+    "Cucumber Java.Scenario: User See Detail Product.executor": "Run",
+    "JUnit.testrunner.executor": "Run",
+    "Maven.AutomationWebsite [compile].executor": "Run",
+    "Maven.RunMaven.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Belajar/Belajar QA/1/PlayWright-BDD",
+    "onboarding.tips.debug.path": "D:/Belajar/Belajar QA/Kerjaan Sendiri/Automation Website/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="steps" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Scenario: Filter By Price(Low to High)">
+    <configuration name="Feature: FilterHome" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/feature/FilterHome.Feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SauceDemo" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: FilterHome" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Filter By Name(A to Z)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/feature/FilterHome.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SauceDemo" />
+      <option name="NAME_FILTER" value="^Filter By Name\(A to Z\)$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Filter By Name\(A to Z\)$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Filter By Name(A to Z)" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Filter By Name(Z to A) (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/feature/FilterHome.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SauceDemo" />
+      <option name="NAME_FILTER" value="^Filter By Name\(Z to A\)$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Filter By Name\(Z to A\)$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Filter By Name(Z to A)" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Filter By Name(Z to A)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/feature/FilterHome.Feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SauceDemo" />
+      <option name="NAME_FILTER" value="^Filter By Name\(Z to A\)$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Filter By Name\(Z to A\)$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Filter By Name(Z to A)" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Filter By Price(Low to High)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/feature/FilterHome.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SauceDemo" />
+      <option name="NAME_FILTER" value="^Filter By Price\(Low to High\)$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Filter By Price\(Low to High\)$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Filter By Price(Low to High)" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMaven" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="deploy" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber Java.Feature: FilterHome" />
+      <item itemvalue="Cucumber Java.Scenario: Filter By Name(A to Z)" />
+      <item itemvalue="Cucumber Java.Scenario: Filter By Name(Z to A)" />
+      <item itemvalue="Cucumber Java.Scenario: Filter By Name(Z to A) (1)" />
+      <item itemvalue="Cucumber Java.Scenario: Filter By Price(Low to High)" />
+      <item itemvalue="Maven.RunMaven" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Scenario: Filter By Price(Low to High)" />
+        <item itemvalue="Cucumber Java.Scenario: Filter By Name(A to Z)" />
+        <item itemvalue="Cucumber Java.Scenario: Filter By Name(Z to A) (1)" />
+        <item itemvalue="Cucumber Java.Feature: FilterHome" />
+        <item itemvalue="Cucumber Java.Scenario: Filter By Name(Z to A)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c70db25-605b-49c1-b231-ef56c2f1cbe2" name="Changes" comment="" />
+      <created>1722232092444</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722232092444</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/FilterHomePage.java</url>
+          <line>66</line>
+          <properties class="pages.FilterHomePage" method="clickhightolow">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
