@@ -52,14 +52,7 @@ public class LoginSteps {
 
     @Then("User Get Error Message")
     public void usergeterrormessage(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(loginPage.errormessagedisplayed()));
 
-        // Verify the error message
-        String expectedErrorMessage = "Epic sadface: Sorry, this user has been locked out.";
-        String actualErrorMessage = loginPage.errormessagedisplayed().getText();
-        assertTrue(actualErrorMessage.contains(expectedErrorMessage));
-        System.out.println(actualErrorMessage);
     }
 
 

@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.junit.Assert.assertTrue;
+
 public class LoginPage {
     WebDriver driver;
     String Username = "performance_glitch_user";
@@ -74,9 +76,22 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOf(chartBtn));
     }
 
-    public WebElement errormessagedisplayed(){
-        return errormessage;
+    @FindBy(css = "h3[data-test='error']")
+    private WebElement errorMessageElement;
 
+    public WebElement getErrorMessageElement() {
+        return errorMessageElement;
+    }
+
+    public void errormessagedisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(getErrorMessageElement()));
+
+        // Verify the error message
+        String expectedErrorMessage = "Epic sadface: Sorry, this user has been locked out.";
+        String actualErrorMessage = getErrorMessageElement().getText();
+        assertTrue("Error message is not as expected. Actual: " + actualErrorMessage, actualErrorMessage.contains(expectedErrorMessage));
+        System.out.println(actualErrorMessage);
     }
 
 }

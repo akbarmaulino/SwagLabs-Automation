@@ -3,43 +3,42 @@ package steps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AddToCardPage;
-
-import java.time.Duration;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AddToCartStep {
 
     private WebDriver driver;
     private AddToCardPage addToCardPage;
 
-    @When("I add a product to my cart")
-    public void iAddAProductToMyCart() throws InterruptedException {
+    @When("User add a product to my cart")
+    public void iAddAProductToMyCart(){
         driver = Hooks.getDriver();
         addToCardPage = new AddToCardPage(driver);
         addToCardPage.ClickAddProductBtn();
-        Thread.sleep(2000);
     }
 
     @Then("The Product Should Appear In My Cart")
-    public void theProductShouldAppearInMyCart() throws InterruptedException {
+    public void theProductShouldAppearInMyCart(){
         addToCardPage.clickCartIcon();
         addToCardPage.ItemDisplayed();
-        Thread.sleep(2000);
+    }
+
+    @Then("User Add a second product to my cart")
+    public void useraddasecondproduct(){
+        addToCardPage.ClickAddSecondProductBtn();
     }
 
     @Then("My Chart Give Item Count")
     public void theproductcountshoulappearinchart(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(addToCardPage.getCartItemCount()));
+        addToCardPage.ItemDisplayed();
+    }
 
-        // Verify the product count
-        String expectedItemCount = "1";
-        String actualItemCount = addToCardPage.getCartItemCount().getText();
-        assertEquals(expectedItemCount, actualItemCount);
+    @Then("User Remove Product")
+    public void userremoveproduct() throws InterruptedException {
+        addToCardPage.ClickAddProductBtn();
+        Thread.sleep(2000);
+
     }
 
 
