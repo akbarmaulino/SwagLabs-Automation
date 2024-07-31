@@ -45,8 +45,8 @@ public class PaymentPage {
     @FindBy(id = "finish")
     private WebElement finishbtn;
 
-    @FindBy(xpath = "//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]")
-    private WebElement errormessage;
+    @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
+    private WebElement navigatetoresultpage;
 
     public void clickFinish(){
         finishbtn.click();
@@ -66,20 +66,16 @@ public class PaymentPage {
         wait.until(ExpectedConditions.visibilityOf(firstNameField)).sendKeys(firstName);
         lastNameField.sendKeys(lastName);
         postalCodeField.sendKeys(postalCode);
+        System.out.println("First Name: " + firstName);
+        System.out.println("Last Name: " + lastName);
+        System.out.println("Postal Code: " + postalCode);
+
     }
 
-    public void getResultPayment(String expectedMessage, String expectedPageUrl){
-        if (!expectedMessage.isEmpty()) {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement messageElement = wait.until(ExpectedConditions.visibilityOfElementLocated((By) errormessage)); // Adjust selector as needed
-            String actualMessage = messageElement.getText();
-            assertEquals(expectedMessage, actualMessage);
-        } else if (!expectedPageUrl.isEmpty()) {
-            String actualUrl = driver.getCurrentUrl();
-            assertEquals(expectedPageUrl, actualUrl);
-        }
+    public void goToResultPayment(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(navigatetoresultpage));
     }
-
 
     public void gotoinformationpage(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

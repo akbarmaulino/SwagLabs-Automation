@@ -47,9 +47,9 @@ public class PaymentSteps {
         paymentpage.clickFinish();
     }
 
-    @And("^User Should Receive (.+) or Navigate To (.+)$")
-    public void userShouldReceiveMessageOrNavigateToPage(String expectedMessage, String expectedPageUrl) {
-        paymentpage.getResultPayment(expectedMessage, expectedPageUrl);
+    @And("User Should Navigate To Complete Checkout Menu")
+    public void userShouldNavigateToCompleteCheckoutMenu() {
+        paymentpage.goToResultPayment();
     }
 
     @When("User Enter <First Name> <Last Name> and <Postal Code>")

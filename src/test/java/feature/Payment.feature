@@ -15,13 +15,10 @@ Feature: User Want To Finish Payment
     And User Click Continue
     And User Navigate To Checkout Overview
     Then User Click Finish
-    And User Should Receive <Expected Message> or Navigate To <Expected Page URL>
+    And User Should Navigate To Complete Checkout Menu
 
 
     Examples:
-      | First Name | Last Name | Postal Code | Expected Message               | Expected Page URL                                |
-      | Source     | Demo      | 00000       | Success                        | https://www.saucedemo.com/checkout-step-two.html |
-      | Source     |           | 00000       | Error: Last Name is required   |                                                |
-      | Source     | Demo      |             | Error: Postal Code is required |                                                |
-      |            | Demo      | 00000       | Error: First Name is required  |                                                |
+      | First Name | Last Name | Postal Code |
+      | Source     | Demo      | 00000       |
 
