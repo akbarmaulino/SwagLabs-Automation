@@ -40,7 +40,7 @@ public class Hooks {
 
                 String scenarioName = scenario.getName().replaceAll("[^a-zA-Z0-9_]", "_");
 
-                File destFile = new File(directory, scenarioName +".png");
+                File destFile = new File(directory, scenarioName + ".png");
                 FileUtils.copyFile(srcFile, destFile);
                 System.out.println("Screenshot taken and saved to " + destFile.getAbsolutePath());
             } catch (IOException e) {
