@@ -40,6 +40,8 @@ public class Hooks {
 
                 String scenarioName = scenario.getName().replaceAll("[^a-zA-Z0-9_]", "_");
 
+//                int count = getCountOfFiles(directory, scenarioName);
+//                File destFile = new File(directory, scenarioName + "_" + (count + 1) + ".png");
                 File destFile = new File(directory, scenarioName + ".png");
                 FileUtils.copyFile(srcFile, destFile);
                 System.out.println("Screenshot taken and saved to " + destFile.getAbsolutePath());
@@ -49,6 +51,22 @@ public class Hooks {
             driver.quit();
         }
     }
+
+//    getCountOfFiles
+
+//    private int getCountOfFiles(File directory, String scenarioName) {
+//        int count = 0;
+//        File[] files = directory.listFiles();
+//        if (files != null) {
+//            for (File file : files) {
+//                if (file.getName().startsWith(scenarioName) && file.getName().endsWith(".png")) {
+//                    count++;
+//                }
+//            }
+//        }
+//        return count;
+//    }
+
     public static WebDriver getDriver() {
         return driver;
     }
