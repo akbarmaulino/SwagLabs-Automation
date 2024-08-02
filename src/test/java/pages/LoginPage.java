@@ -7,15 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.desktop.SystemEventListener;
 import java.time.Duration;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class LoginPage {
     WebDriver driver;
-    String Username = "performance_glitch_user";
-    String UsernameLock = "locked_out_user";
-    String Password = "secret_sauce";
+    String UsernameValid = "performance_glitch_user";
+    String PasswordValid = "secret_sauce";
 
     public LoginPage(WebDriver webDrivers){
         driver = webDrivers;
@@ -24,7 +25,7 @@ public class LoginPage {
 
 
     @FindBy(xpath = "//*[@id=\"user-name\"]")
-    private WebElement userName;
+    private WebElement username;
 
     @FindBy(xpath = "//*[@id=\"password\"]")
     private WebElement password;
@@ -39,17 +40,33 @@ public class LoginPage {
     private WebElement errormessage;
 
 
-    public void enterUsername(){
-        userName.sendKeys(Username);
+    @FindBy(css = "h3[data-test='error']")
+    private WebElement errorMessageElement;
+
+    public void enterUsername(String Username){
+        if (Username.equals("[empty]")) {
+            username.sendKeys("");
+        } else {
+            username.sendKeys(Username);
+        }
+    }
+
+    public void enterPassword(String Password) {
+        if (Password.equals("[empty]")) {
+            password.sendKeys("");
+        } else {
+            password.sendKeys(Password);
+        }
+    }
+
+
+    public void enterUsernamevalid(){
+        username.sendKeys(UsernameValid);
 
     }
 
-    public void enterUsernameLock(){
-        userName.sendKeys(UsernameLock);
-    }
-
-    public void enterPassword(){
-        password.sendKeys(Password);
+    public void enterPasswordValid(){
+        password.sendKeys(PasswordValid);
     }
 
     public void clickLoginButton(){
@@ -58,7 +75,7 @@ public class LoginPage {
 
     public void usernamefielddisplayed(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(userName));
+        wait.until(ExpectedConditions.visibilityOf(username));
     }
 
     public void passwordfielddisplayed(){
@@ -76,22 +93,8 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOf(chartBtn));
     }
 
-    @FindBy(css = "h3[data-test='error']")
-    private WebElement errorMessageElement;
-
-    public WebElement getErrorMessageElement() {
-        return errorMessageElement;
-    }
-
-    public void errormessagedisplayed() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(getErrorMessageElement()));
-
-        // Verify the error message
-        String expectedErrorMessage = "Epic sadface: Sorry, this user has been locked out.";
-        String actualErrorMessage = getErrorMessageElement().getText();
-        assertTrue("Error message is not as expected. Actual: " + actualErrorMessage, actualErrorMessage.contains(expectedErrorMessage));
-        System.out.println(actualErrorMessage);
+    public String getErrorMessage() {
+        return errorMessageElement.getText();
     }
 
 }

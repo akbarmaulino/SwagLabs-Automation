@@ -48,6 +48,9 @@ public class PaymentPage {
     @FindBy(xpath = "//*[@id=\"header_container\"]/div[2]/span")
     private WebElement navigatetoresultpage;
 
+    @FindBy(xpath = "//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]")
+    private WebElement errorMessageElement;
+
     public void clickFinish(){
         finishbtn.click();
     }
@@ -61,16 +64,65 @@ public class PaymentPage {
         continuebtn.click();
     }
 
-    public void enterDetailsSelf(String firstName, String lastName, String postalCode) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(firstNameField)).sendKeys(firstName);
-        lastNameField.sendKeys(lastName);
-        postalCodeField.sendKeys(postalCode);
+//    public void enterDetailsSelf(String firstName, String lastName, String postalCode) {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.visibilityOf(firstNameField));
+//
+//        if (firstName.equals("[empty]")) {
+//            firstNameField.sendKeys("");
+//        } else {
+//            firstNameField.sendKeys(firstName);
+//        }
+//
+//        if (lastName.equals("[empty]")) {
+//            lastNameField.sendKeys("");
+//        } else {
+//            lastNameField.sendKeys(lastName);
+//        }
+//
+//        if (postalCode.equals("[empty]")) {
+//            postalCodeField.sendKeys("");
+//        } else {
+//            postalCodeField.sendKeys(postalCode);
+//        }
+//
+//        System.out.println("First Name: " + firstName);
+//        System.out.println("Last Name: " + lastName);
+//        System.out.println("Postal Code: " + postalCode);
+//
+//    }
+
+    public void enterFirstName(String firstName){
+        if (firstName.equals("[empty]")) {
+            firstNameField.sendKeys("");
+        } else {
+            firstNameField.sendKeys(firstName);
+        }
+
         System.out.println("First Name: " + firstName);
-        System.out.println("Last Name: " + lastName);
-        System.out.println("Postal Code: " + postalCode);
 
     }
+
+    public void enterLastName(String lastName) {
+        if (lastName.equals("[empty]")) {
+            lastNameField.sendKeys("");
+        } else {
+            lastNameField.sendKeys(lastName);
+        }
+        System.out.println("Last Name: " + lastName);
+
+    }
+
+    public void enterPostalCode(String postalCode) {
+        if (postalCode.equals("[empty]")) {
+            postalCodeField.sendKeys("");
+        } else {
+            postalCodeField.sendKeys(postalCode);
+        }
+        System.out.println("Postal Code: " + postalCode);
+    }
+
+
 
     public void goToResultPayment(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -84,6 +136,12 @@ public class PaymentPage {
     
     public void clickCheckout(){
         checkoutbtn.click();
+    }
+
+    public String getErrorMessage() {
+        System.out.println(errorMessageElement.getText());
+        return errorMessageElement.getText();
+
     }
 
 
