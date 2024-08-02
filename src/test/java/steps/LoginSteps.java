@@ -53,8 +53,8 @@ public class LoginSteps {
         Thread.sleep(2000);
     }
 
-    @Then("^User Should Get (.+)$")
-    public void usershouldoutcome1(String expectedOutcome){
+    @Then("^User Should Get (.+) In Login Page$")
+    public void userShouldGetOutcomeInLoginPage(String expectedOutcome){
         String actualErrorMessage = loginPage.getErrorMessage();
         assertTrue("Error message is not as expected. Actual: " + actualErrorMessage,
                 actualErrorMessage.contains(expectedOutcome));

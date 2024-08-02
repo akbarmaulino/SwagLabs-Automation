@@ -40,15 +40,43 @@ public class Hooks {
 
                 String scenarioName = scenario.getName().replaceAll("[^a-zA-Z0-9_]", "_");
 
-//                int count = getCountOfFiles(directory, scenarioName);
-//                File destFile = new File(directory, scenarioName + "_" + (count + 1) + ".png");
-                File destFile = new File(directory, scenarioName + ".png");
+                // Get count of existing files
+                int count = getCountOfFiles(directory, scenarioName);
+                // Create new file name with count
+                File destFile = new File(directory, scenarioName + "_" + (count + 1) + ".png");
+
                 FileUtils.copyFile(srcFile, destFile);
                 System.out.println("Screenshot taken and saved to " + destFile.getAbsolutePath());
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+
+
+//            try {
+//                TakesScreenshot screenshot = (TakesScreenshot) driver;
+//                File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
+//
+//                String scenarioName = scenario.getName().replaceAll("[^a-zA-Z0-9_]", "_");
+//
+////                int count = getCountOfFiles(directory, scenarioName);
+////                File destFile = new File(directory, scenarioName + "_" + (count + 1) + ".png");
+//                File destFile = new File(directory, scenarioName + ".png");
+//                FileUtils.copyFile(srcFile, destFile);
+//                System.out.println("Screenshot taken and saved to " + destFile.getAbsolutePath());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
             driver.quit();
+        }
+    }
+
+    private int getCountOfFiles(File directory, String baseName) {
+        File[] files = directory.listFiles((dir, name) -> name.startsWith(baseName) && name.endsWith(".png"));
+        if (files != null) {
+            return files.length;
+        } else {
+            return 0;
         }
     }
 

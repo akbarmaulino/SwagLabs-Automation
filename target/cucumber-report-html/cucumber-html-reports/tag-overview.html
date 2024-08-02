@@ -49,32 +49,32 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels: ["@LoginFeature","@LogoutFeature"],
+        labels: ["@LoginFeature","@LogoutFeature","@Payment"],
         datasets: [
             {
                 label: 'Passed',
                 backgroundColor: "#92DD96",
-                data: [100.00, 100.00]
+                data: [100.00, 100.00, 100.00]
             },
             {
                 label: 'Failed',
                 backgroundColor: "#F2928C",
-                data: [0.00, 0.00]
+                data: [0.00, 0.00, 0.00]
             },
             {
                 label: 'Skipped',
                 backgroundColor: "#8AF",
-                data: [0.00, 0.00]
+                data: [0.00, 0.00, 0.00]
             },
             {
                 label: 'Pending',
                 backgroundColor: "#F5F28F",
-                data: [0.00, 0.00]
+                data: [0.00, 0.00, 0.00]
             },
             {
                 label: 'Undefined',
                 backgroundColor: "#F5B975",
-                data: [0.00, 0.00]
+                data: [0.00, 0.00, 0.00]
             }
         ]
     };
@@ -135,7 +135,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>SauceDemo</td>
                           <td>1</td>
-                        <td>02 Aug 2024, 15:03</td>
+                        <td>02 Aug 2024, 15:59</td>
           </tr>
         </tbody>
       </table>
@@ -203,7 +203,7 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">24</td>
-        <td class="duration" data-value="30431475700">30s 431ms</td>
+        <td class="duration" data-value="30412752400">30s 412ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -218,24 +218,39 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">3</td>
-        <td class="duration" data-value="621941200">621ms</td>
+        <td class="duration" data-value="624514400">624ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="Payment.html">@Payment</a></td>
+        
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td      class="passed"    >27</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">27</td>
+        <td class="duration" data-value="11144396700">11s 144ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>2</td>
-            <td>7</td>
+      <td>3</td>
+            <td>12</td>
       <td>0</td>
-      <td>7</td>
-      <td>27</td>
-      <td>0</td>
-      <td>0</td>
+      <td>12</td>
+      <td>54</td>
       <td>0</td>
       <td>0</td>
-      <td>27</td>
-      <td class="duration">31s 053ms</td>
+      <td>0</td>
+      <td>0</td>
+      <td>54</td>
+      <td class="duration">42s 181ms</td>
       <td></td>
     </tr>
     <tr>

@@ -11,7 +11,7 @@ Feature: Login Feature
         Given User In On Login Page
         When User Enters <username> and <password>
         And User Click Login
-        Then User Should Get <outcome>
+        Then User Should Get <outcome> In Login Page
 
         Examples:
             | username          | password      | outcome                                                                   |
