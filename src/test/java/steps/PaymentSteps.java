@@ -52,7 +52,4 @@ public class PaymentSteps {
         paymentpage.goToResultPayment();
     }
 
-    @When("User Enter <First Name> <Last Name> and <Postal Code>")
-    public void userEnterFirstNameLastNameAndPostalCode() {
-    }
 }

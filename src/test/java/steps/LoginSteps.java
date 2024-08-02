@@ -27,17 +27,11 @@ public class LoginSteps {
 
     @When("User Enter Valid Credential")
     public void userentervalidcredential() throws InterruptedException {
-        loginPage.enterUsername();
-        loginPage.enterPassword();
+        loginPage.enterUsernamevalid();
+        loginPage.enterPasswordValid();
         Thread.sleep(2000);
     }
 
-    @When("User Enter Lock Account")
-    public void userenterlockaccount() throws InterruptedException{
-        loginPage.enterUsernameLock();
-        loginPage.enterPassword();
-        Thread.sleep(2000);
-    }
 
     @Then("User Click Login")
     public void userclicklogin() throws InterruptedException {
@@ -50,10 +44,19 @@ public class LoginSteps {
         loginPage.chartbtnisdisplayed();
     }
 
-    @Then("User Get Error Message")
-    public void usergeterrormessage(){
 
+    @When("^User Enters (.+) and (.+)$")
+    public void userentersusernameandpassword1(String username, String Password) throws InterruptedException {
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(Password);
+        loginPage.clickLoginButton();
+        Thread.sleep(2000);
     }
 
-
+    @Then("^User Should Get (.+)$")
+    public void usershouldoutcome1(String expectedOutcome){
+        String actualErrorMessage = loginPage.getErrorMessage();
+        assertTrue("Error message is not as expected. Actual: " + actualErrorMessage,
+                actualErrorMessage.contains(expectedOutcome));
+    }
 }

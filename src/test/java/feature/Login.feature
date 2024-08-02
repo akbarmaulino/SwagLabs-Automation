@@ -7,11 +7,22 @@ Feature: Login Feature
         And User Click Login
         Then User Navigate To Homepage Menu
 
-    Scenario: User Login With Lock Account
+    Scenario Outline: User Failed Login
         Given User In On Login Page
-        When User Enter Lock Account
+        When User Enters <username> and <password>
         And User Click Login
-        Then User Get Error Message
+        Then User Should Get <outcome>
+
+        Examples:
+            | username          | password      | outcome                                                                   |
+            | locked_out_user   | secret_sauce  | Epic sadface: Sorry, this user has been locked out.                       |
+            | standard_user     | secret        | Epic sadface: Username and password do not match any user in this service |
+            | standard_user     | [empty]       | Epic sadface: Password is required                                        |
+            | [empty]           | secret_sauce  | Epic sadface: Username is required                                        |
+            | [empty]           | [empty]       | Epic sadface: Username is required                                        |
+
+
+
 
 
 
