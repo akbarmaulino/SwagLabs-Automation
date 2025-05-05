@@ -39,13 +39,11 @@ jobs:
       - name: Run Cucumber tests
         run: mvn clean test
 
-      # 6. Archive Cucumber and Surefire test reports
-      - name: Archive Cucumber and Surefire test reports
-        if: always()  # Ensure it runs even if there are errors
+      # 6. Upload test report (HTML)
+      - name: Upload Cucumber HTML Report
+        if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: cucumber-reports
-          path: |
-            target/cucumber-report.html  # Cucumber HTML report
-            target/cucumber.json         # Cucumber JSON report
-            target/surefire-reports/*     # Surefire JUnit reports
+          name: cucumber-html-report
+          path: target/HTMLReports.html
+
