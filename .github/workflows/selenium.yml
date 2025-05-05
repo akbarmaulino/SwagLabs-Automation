@@ -39,12 +39,19 @@ jobs:
       - name: Run tests
         run: mvn clean test
 
-      # 6. Archive test reports (jika ada)
+      # 6. Verify cucumber.json exists
+      - name: Verify cucumber.json exists
+        run: |
+          ls -l target/
+
+      # 7. Archive test reports (jika ada)
       - name: Archive Cucumber and Surefire test reports
         if: always()  # Pastikan tetap dieksekusi meskipun ada error
+        continue-on-error: true
         uses: actions/upload-artifact@v3
         with:
           name: test-reports
           path: |
+            target/surefire-reports/*
             target/cucumber-report-html/*
             target/cucumber.json
