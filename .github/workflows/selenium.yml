@@ -44,10 +44,12 @@ jobs:
         run: |
           ls -l target/
 
-      # 8. Upload Artifact with GITHUB_TOKEN
+      # 8. Upload Artifact with GITHUB_TOKEN (for PowerShell)
       - name: Upload cucumber.json with GITHUB_TOKEN
         run: |
           echo "Uploading cucumber.json artifact"
-          curl -X POST https://api.github.com/repos/${{ github.repository }}/actions/artifacts \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          curl -X POST https://api.github.com/repos/${{ github.repository }}/actions/artifacts `
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" `
           -F "file=@target/cucumber.json"
+
+          
