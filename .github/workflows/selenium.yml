@@ -1,14 +1,6 @@
-name: CI - Selenium Java with Chrome
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
 jobs:
   build-and-test:
-    runs-on: windows-latest  # Use Windows
+    runs-on: windows-latest
 
     steps:
       # 1. Checkout source code
@@ -20,7 +12,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '17'  # Gunakan 17, karena Java 22 belum didukung Maven
 
       # 3. Install Chrome
       - name: Install Chrome
@@ -35,15 +27,22 @@ jobs:
           Expand-Archive -Path "chromedriver.zip" -DestinationPath "chromedriver"
           $env:PATH += ";$(pwd)\chromedriver"
 
-      # 5. Run Maven Cucumber Tests
+      # 5. Run Tests (mvn clean test)
       - name: Run Cucumber tests
         run: mvn clean test
 
-      # 6. Upload test report (HTML)
-      - name: Upload Cucumber HTML Report
+      # 6. Upload Cucumber JSON Report
+      - name: Upload Cucumber JSON Report
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: cucumber-html-report
+          name: cucumber-json-report
           path: target/cucumber.json
 
+      # Optional: Upload HTML Report (if you also want to generate HTML)
+      # - name: Upload Cucumber HTML Report
+      #   if: always()
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: cucumber-html-report
+      #     path: target/HTMLReports.html
