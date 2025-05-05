@@ -8,19 +8,19 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Menggunakan Windows
 
     steps:
       # 1. Checkout source code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Set up Java
+      # 2. Setup Java
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # Gunakan 17, karena Java 22 belum didukung Maven
+          java-version: '17'  # Ganti dengan versi Java kamu
 
       # 3. Install Chrome
       - name: Install Chrome
@@ -35,14 +35,17 @@ jobs:
           Expand-Archive -Path "chromedriver.zip" -DestinationPath "chromedriver"
           $env:PATH += ";$(pwd)\chromedriver"
 
-      # 5. Run Tests (mvn clean test)
-      - name: Run Cucumber tests
+      # 5. Run Maven Tests
+      - name: Run tests
         run: mvn clean test
 
-      # 6. Upload Cucumber JSON Report
-      - name: Upload Cucumber JSON Report
-        if: always()
+      # 6. Archive test reports (jika ada)
+      - name: Archive Cucumber and Surefire test reports
+        if: always()  # Pastikan tetap dieksekusi meskipun ada error
         uses: actions/upload-artifact@v3
         with:
-          name: cucumber-json-report
-          path: target/cucumber.json
+          name: test-reports
+          path: |
+            target/surefire-reports/*
+            target/cucumber-report-html/*
+            target/cucumber.json
