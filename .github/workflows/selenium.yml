@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # Ganti dengan versi Java kamu
+          java-version: '17'  
 
       # 3. Install Chrome
       - name: Install Chrome
@@ -45,14 +45,5 @@ jobs:
           echo "Listing files in target directory"
           dir target
 
-      # 7. Archive test reports (Cucumber dan Surefire)
-      - name: Archive Cucumber and Surefire test reports
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-reports
-          path: |
-            target/surefire-reports/*.xml
-            target/cucumber-report-html/*
-            target/cucumber.json
+
 
