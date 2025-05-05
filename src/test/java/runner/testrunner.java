@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/java/feature",
         glue = {"steps"},
         monochrome = true,
-        plugin = {"pretty", "html:target/HTMLReports.html"}
-//        plugin = {"json:target/cucumber.json"}
+//        plugin = {"pretty", "html:target/HTMLReports.html"}
+        plugin = {"json:target/cucumber.json"}
 
 )
 
