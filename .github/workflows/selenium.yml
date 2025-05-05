@@ -54,3 +54,11 @@ jobs:
             target/surefire-reports/*
             target/cucumber-report-html/*
             target/cucumber.json
+
+      # 8. Upload Artifact with GITHUB_TOKEN
+      - name: Upload cucumber.json with GITHUB_TOKEN
+        run: |
+          echo "Uploading cucumber.json artifact"
+          curl -X POST https://api.github.com/repos/${{ github.repository }}/actions/artifacts \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -F "file=@target/cucumber.json"
