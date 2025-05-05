@@ -1,3 +1,11 @@
+name: CI - Selenium Java with Chrome
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build-and-test:
     runs-on: windows-latest
@@ -38,11 +46,3 @@ jobs:
         with:
           name: cucumber-json-report
           path: target/cucumber.json
-
-      # Optional: Upload HTML Report (if you also want to generate HTML)
-      # - name: Upload Cucumber HTML Report
-      #   if: always()
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: cucumber-html-report
-      #     path: target/HTMLReports.html
