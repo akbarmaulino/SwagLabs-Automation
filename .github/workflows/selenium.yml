@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # Ganti dengan versi Java kamu
+          java-version: '22'  # Ganti dengan versi Java kamu
 
       # 3. Install Chrome
       - name: Install Chrome
