@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # Ganti dengan versi Java kamu
+          java-version: '22'  # Ganti dengan versi Java kamu
 
       # 3. Install Chrome
       - name: Install Chrome
@@ -47,8 +47,7 @@ jobs:
       # 7. Archive test reports (jika ada)
       - name: Archive Cucumber and Surefire test reports
         if: always()  # Pastikan tetap dieksekusi meskipun ada error
-        continue-on-error: true
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2  # Gunakan versi v2 yang lebih stabil
         with:
           name: test-reports
           path: |
