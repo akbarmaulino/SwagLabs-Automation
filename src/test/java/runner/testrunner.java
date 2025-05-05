@@ -6,10 +6,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",  // Pastikan path ke fitur kamu benar
+        features = "src/test/java/feature",
         glue = {"steps"},
         monochrome = true,
-        plugin = {"json:target/cucumber.json"}  // Menyimpan hasil tes dalam format JSON
+//        plugin = {"pretty", "html:target/HTMLReports.html"},
+        plugin = {"json:target/cucumber.json"}
 )
+
 public class testrunner {
 }
+
+
+

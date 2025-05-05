@@ -21,15 +21,10 @@ public class Hooks {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--start-fullscreen");
-        options.addArguments("--headless");  // Tambahkan headless agar tidak butuh GUI
-
-        // Set path untuk ChromeDriver yang diunduh secara otomatis di GitHub Actions
-        System.setProperty("webdriver.chrome.driver", "C:\\File Kerja\\Aplikasi\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-
+        System.setProperty("webdriver.chrome.driver", "D:\\Aplikasi Donwload\\chromedriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
     }
-
 
     @After
     public void tearDown(Scenario scenario) {
