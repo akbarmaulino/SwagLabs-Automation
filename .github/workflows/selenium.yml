@@ -40,9 +40,12 @@ jobs:
         run: mvn clean test
 
       # 6. Archive test reports (jika ada)
-      - name: Archive test reports
-        if: always()
+      - name: Archive Cucumber and Surefire test reports
+        if: always()  # Pastikan tetap dieksekusi meskipun ada error
         uses: actions/upload-artifact@v3
         with:
           name: test-reports
-          path: target/surefire-reports/
+          path: |
+            target/surefire-reports/*
+            target/cucumber-report-html/*
+            target/cucumber.json
